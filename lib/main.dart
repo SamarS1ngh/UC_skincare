@@ -1,5 +1,6 @@
-import 'package:feature_based/Routes/app_router_config.dart';
-import 'package:feature_based/core/utils/app_constants.dart';
+import 'package:UCskincare/Routes/app_router_config.dart';
+import 'package:UCskincare/core/utils/app_constants.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,6 +14,7 @@ Future<void> main() async {
     DeviceOrientation.portraitDown,
   ]);
   await LocalStorageService.init();
+  await Firebase.initializeApp();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -26,11 +28,10 @@ class MyApp extends StatelessWidget {
         routerConfig: AppRouter.router,
         theme: Theme.of(context).copyWith(
             appBarTheme: AppBarTheme(
-                actionsIconTheme: const IconThemeData(color: Colors.white),
-                iconTheme: const IconThemeData(color: Colors.white),
-                backgroundColor: AppColorsTheme.dark().bgColor),
+              iconTheme: IconThemeData(color: AppColorsTheme.light().bgInput),
+            ),
             extensions: [
-              AppColorsTheme.dark(),
+              AppColorsTheme.light(),
               AppTypography.main(),
               AppDimensionsTheme.main(View.of(context))
             ]),

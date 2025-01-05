@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "418108928557",
+    "project_id": "ucskincare-a65d0",
+    "storage_bucket": "ucskincare-a65d0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418108928557:android:609dee990df769b21d3ea4",
+        "android_client_info": {
+          "package_name": "com.example.UCskincare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGmt9v871_Z3bIzPYEO7_MFbeUehlPAgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

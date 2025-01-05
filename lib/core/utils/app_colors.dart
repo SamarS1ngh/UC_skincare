@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   //reference colors
-  static const Color _littleDarkBlue = Color(0XFF162c46);
-  static const Color _grey = Color(0xD69E9E9E);
-  static const Color _red = Color(0xFFAF0121);
+  static const Color _pinkish = Color(0XFFf2e8eb);
+  static const Color _red = Color(0xFF964f66);
   static const Color _green = Color(0xFF00F318);
-  static const Color _darkBlue = Color(0XFF021427);
-  static const Color _white = Color(0xFFFFFFFF);
+  static const Color _black = Colors.black;
 
   //actual colors to be used throughout the app
   final Color bgColor;
@@ -25,27 +23,22 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
     required this.textDefault,
   });
 
-//defining dark theme
-  factory AppColorsTheme.dark() {
+//defining light theme
+  factory AppColorsTheme.light() {
     return const AppColorsTheme._internal(
-        bgColor: _darkBlue,
-        bgInput: _littleDarkBlue,
+        bgColor: _pinkish,
+        bgInput: _red,
         snackbarValidation: _green,
         snackBarFailure: _red,
-        textDefault: _white);
+        textDefault: _black);
   }
-
-//define your light theme
-  // factory AppColorsTheme.light(){
-  //   return AppColorsTheme._internal(...);
-  // }
 
   @override
   ThemeExtension<AppColorsTheme> copyWith({bool? lightMode}) {
     if (lightMode == null || lightMode == true) {
-      return AppColorsTheme.dark();
+      return AppColorsTheme.light();
     }
-    return AppColorsTheme.dark();
+    return AppColorsTheme.light();
   }
 
   @override
