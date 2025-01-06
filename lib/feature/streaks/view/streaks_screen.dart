@@ -1,5 +1,6 @@
 import 'package:UCskincare/core/utils/app_colors.dart';
 import 'package:UCskincare/core/widgets/app_text.dart';
+import 'package:UCskincare/core/widgets/centred_text_button.dart';
 import 'package:UCskincare/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,8 +24,9 @@ class StreaksScreen extends ConsumerWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.w),
+        padding: EdgeInsets.symmetric(horizontal: 5.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -73,7 +75,28 @@ class StreaksScreen extends ConsumerWidget {
               ),
             ),
             SizedBox(height: 4.h),
-            AppText.bigTextBold("Daily Streak", context: context)
+            AppText.bigTextDefault(
+              "Daily Streak",
+              context: context,
+              size: 18.sp,
+            ),
+            SizedBox(height: 1.h),
+            AppText.bigTextDefault(
+              count.toString(),
+              context: context,
+            ),
+            const Spacer(),
+            Container(
+              alignment: Alignment.center,
+              width: double.infinity,
+              height: 5.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: AppColorsTheme.light().bgColor,
+              ),
+              child: const Text(AppString.getStarted),
+            ),
+            SizedBox(height: 2.h)
           ],
         ),
       ),
